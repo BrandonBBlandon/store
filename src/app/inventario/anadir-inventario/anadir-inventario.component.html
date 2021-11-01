@@ -1,0 +1,73 @@
+<router-outlet></router-outlet>
+<div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" >
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" routerLink="inventario"> ver
+    </label>
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" routerLink="inventario/anadir"> añadir
+    </label>
+    <label ngbButtonLabel class="btn-primary">
+      <input ngbButton type="radio" routerLink="inventario/borrar"> borrar
+    </label>
+  </div>
+  
+
+
+<section class="post-list" style="text-align: center;">
+    <div class="content">
+   
+     <article class="post" *ngFor="let item of collection.data ">
+       <div class="post-header">
+         <div class="post-img-1"></div>
+       </div>
+       <div class="post-body">
+         <span>{{item.serie}}</span>
+         <h2>{{item.name}}</h2>
+         <p>{{item.type}} </p>
+         
+         
+       </div>  
+     </article>
+    </div>
+     </section>
+
+     <ng-template #content let-modal>
+      <div class="form-group">
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">añade un producto</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      <form [formGroup]="inventoryForm" >
+      <div id="containerDatos">
+          <table>
+              <tr>
+              <td><p>serial:</p></td>
+              <td><input type="text" maxlength="30" name="serie" formControlName="serie"></td>
+              </tr>
+              <tr>
+              <td><p>Nombre:</p></td>
+              <td><input type="text" maxlength="30" name="name" formControlName="name"></td>
+              </tr>
+              <tr>
+              <td><p>tipo:</p></td>
+              <td><input type="text" maxlength="30" name="type" formControlName="type"></td>
+              </tr>
+              <input type="submit" name="data" value="Subir información" (click)="guardarPost()"> <!--Boton para subir informacion a la BD-->
+          </table>      
+      </div>
+     
+      </form>
+     
+      </div>
+      </div>
+      </ng-template>
+    
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">añadir producto</button>
+    
+   
+    
+    
+   
+
+     
