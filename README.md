@@ -1,6 +1,19 @@
-# Eggify
+# Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+
+- La app trata de ser una base para hacer una administración de un establecimiento físico.
+- La creación de productos para el inventario es funcional.
+- La creación de proveedores sin razón aparente después de un largo análisis no es funcional
+- Pero esta programada correctamente tal y como la función de creación de productos
+- Las ventas no están disponibles
+- En cuanto a eliminar, este no funciona correctamente en los 2 módulos anteriores
+- Y ver funciona perfectamente en ambos módulos
+- La vista por defecto en la interfaz gráfica es ver
+- No hay interfaz gráfica para acceder a borrar y añadir se puede hacer por medio de alteración de la url
+	Ejemplo "inventario/anadir"
+	Inventario/borrar
+
 
 ## Development server
 
